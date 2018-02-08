@@ -1,0 +1,256 @@
+// 页面的公共样式
+#page{
+    height: 100%;
+    @include w750;
+}
+
+// 页面
+.layout-page{
+    height: 100%;
+    padding-bottom: px(100);
+}
+
+// 分割线
+.split{
+    height: px(10);
+    background-color: #eeeeee;
+}
+
+// 底部技术支持
+.footer-support{
+    padding: px(15);
+    color: #747474;
+    background-color: #efeff4;
+    text-align: center;
+}
+
+// 底部导航公共样式
+.footer-wrapper{
+    height: px(100);
+}
+.footer-fixed{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: px(100);
+    z-index: 99;
+    background-color: #f7f7f7;
+    border-top: px(1) solid #e4e4e4;
+    @include w750;
+    @include flex;
+    a{
+        position: relative;
+        display: block;
+        padding-top: px(58);
+        background-image: url('../static/images/meau.png');
+        background-repeat:no-repeat;
+        background-size: px(750) px(200);
+        text-align: center;
+        font-size: px(24);
+        color: #484848;
+        @include flex-one;
+        &:nth-child(2){
+            background-position-x: px(-187);
+        }
+        &:nth-child(3){
+            background-position-x: px(-380);
+        }
+        &:nth-child(4){
+            background-position-x: px(-563);
+        }
+        &.sel{
+          background-position-y:px(-100);
+          color: #ff5500;
+        }
+    }
+}
+
+
+// 商品列表
+.product-list{
+    overflow: hidden;
+    .title{
+        padding: 0 px(26);
+        line-height: px(76);
+        color: #ff5500;
+        font-size: px(26);
+        .more{
+            float: right;
+            color: #999;
+            &:after{
+                content: "";
+                display: inline-block;
+                width: px(40);
+                height: px(76);
+                vertical-align: top;
+                background-position: px(10) px(-175);
+                @include icon-image;
+            }
+        }
+    }
+    .list{
+        font-size: px(22);
+        border-top: 1px solid #eaeaea;
+        a{
+            display: block;
+            float: left;
+            width: 33.33%;
+            padding: px(12);
+            border-right: 1px solid #eaeaea;
+            &:last-child{
+                border-right: none;
+            }
+        }
+        .img{
+            position: relative;
+            padding-top: 100%;
+            img{
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .txt{
+            color: #484848;
+            text-align: center;
+            @include test-ellipsis;
+        }
+        .price{
+            color: #ff5500;
+        }
+        &.two{
+            margin-left: -1.2%;
+            background-color: #efeff4;
+            a{
+                width: 48.8%;
+                margin-left: 1.2%;
+                margin-bottom: px(10);
+                border:none;
+                background-color: #fff;
+                
+            }
+        }
+        &.three{
+            margin-left: -1.2%;
+            background-color: #efeff4;
+            a{
+                width: 32.13%;
+                margin-left: 1.2%;
+                margin-bottom: px(10);
+                border:none;
+                background-color: #fff;
+                
+            }
+        }
+    }
+}
+// 搜索样式
+.search-wrapper{
+    position: relative;
+    padding:px(10);
+    background-color: #fff;
+    z-index: 9;
+    @include flex;
+    .category-icon{
+        width: px(68);
+        height: px(68);
+        background-position: px(20) px(19);
+        @include icon-image;
+    }
+    .inp-box{
+        padding: 0 px(15);
+        margin: 0 px(10);
+        background-color: #f5f5f5;
+        border-radius: px(8);
+        @include flex-one;
+        &.act{
+            .inp{
+                display: block;
+            }
+            .show-inp{
+                display: none;
+            }
+        }
+    }
+    .button{
+        width: px(108);
+        height: px(68);
+        color: #fff;
+        font-size: px(24);
+        border-radius: px(8);
+        background-color: #ff5500;
+    }
+    .show-inp{
+        text-align: center;
+        line-height: px(68);
+        color: #979797;
+        &:before{
+            content: "";
+            display: inline-block;
+            width: px(44);
+            height: px(68);
+            background-position: px(0) px(-82);
+            vertical-align: top;
+            @include icon-image;
+        }
+    }
+    .inp{
+        display: none;
+        height: px(68);
+        width: 100%;
+        font-size: px(24);
+        background-color: #f5f5f5;
+        padding-left: px(44);
+        @include icon-image;
+        background-position: px(0) px(-82);
+    }
+}
+// 没有商品的样式
+ .no-product{
+    margin-bottom: px(20);
+    font-size: px(22);
+    line-height: px(60);
+    color: #999999;
+    border-width: 1px 0;
+    border-color: #dfdee1;
+    background-color: #fff;
+    border-style: solid;
+    text-align: center;
+}
+
+// 选择数量
+.num-box{
+    color: #000;
+    font-size: px(22);
+    margin-right: px(20);
+    .operate{
+        display: inline-block;
+        width: px(52);
+        height: px(52);
+        line-height: px(52);
+        text-align: center;
+        background-color: #ececec;
+        &.disable{
+            background-color: #ededef;
+            color: #d2d2d4;
+        }
+    }
+    .add{
+        border-radius: px(8) 0 0 px(8);
+    }
+    .rec{
+        border-radius: 0 px(8) px(8) 0;
+    }
+    .inp{
+        width: px(52);
+        margin: 0 px(5);
+        font-size: px(22);
+        text-align: center;
+    }
+}

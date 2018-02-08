@@ -1,0 +1,364 @@
+@charset "utf-8";
+// 通用设置
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    &:before,
+    &:after {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+address,
+cite,
+dfn,
+em,
+var,
+i {
+    font-style: normal;
+}
+table,
+td,
+th {
+    border-collapse: collapse;
+}
+ul,
+ol {
+    list-style: none;
+}
+input,
+textarea {
+    border: 0;
+    outline: 0;
+    &::-webkit-input-placeholder {
+        color: #bbb;
+    }
+    &:-moz-placeholder {
+        color: #bbb;
+    }
+    &::-moz-placeholder {
+        color: #bbb;
+    }
+    &:-ms-input-placeholder {
+        color: #bbb;
+    }
+}
+button {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    &:hover {
+        color: initial;
+    }
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix {
+    *zoom: 1;
+}
+.clear {
+    display: block;
+    clear: both;
+    font-size: 1px;
+    width: 1px;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.hide {
+    display: none !important;
+}
+.tal{
+    text-align: left;
+}
+.tar{
+    text-align: right;
+}
+.tac{
+    text-align: center;
+}
+.fr{
+    float: right;
+}
+.mc{
+    color: #ff5500;
+}
+.c3{
+    color: #333;
+}
+.thr{
+    text-decoration: line-through;
+}
+img{
+    max-width: 100%;
+}
+
+//基本字号函数
+@function px($number: 750) {
+    @return $number/750*640/20/2+rem;
+}
+// 公共函数
+@mixin transition($val: all 1s) {
+    transition: $val;
+    -webkit-transition: $val;
+}
+@mixin test-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin ovh-more-line($val:2) {
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:$val; 
+}
+@mixin ct {
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+@mixin cl {
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+@mixin w750 {
+    width: px(750);
+    margin: 0 auto;
+}
+@mixin icon-image {
+    background-image: url("../static/images/icon.png");
+    background-repeat:  no-repeat;
+    background-size: px(60) auto;
+}
+@mixin img-middle{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+    color: #484848;
+    font-size: px(24);
+}
+// 针对vue路由切换的样式处理
+.mode-fade-enter-active,
+.mode-fade-leave-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    transition: opacity .4s;
+    -webkit-transition: opacity .4s;
+    @include w750;
+}
+.mode-fade-enter,
+.mode-fade-leave-active {
+    opacity: 0;
+}
+.mode-slide-right-enter-active,
+.mode-slide-right-leave-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    @include w750;
+}
+.mode-slide-right-enter,
+.mode-slide-right-leave-active {
+    opacity: .2;
+}
+.mode-slide-right-enter {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+.mode-slide-right-enter-active {
+    top: 0;
+    z-index: 9;
+}
+.mode-slide-right-leave-active {
+    z-index: 1;
+}
+.mode-slide-left-enter-active,
+.mode-slide-left-leave-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    @include w750;
+}
+.mode-slide-left-enter,
+.mode-slide-left-leave-active {
+    opacity: .2;
+}
+.mode-slide-left-enter-active {
+    z-index: 1;
+}
+.mode-slide-left-leave-active {
+    z-index: 9;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+
+
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex-one {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+@mixin flex-align {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@mixin flex-pack {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+// vux样式重置
+.vux-slider{
+    >.vux-indicator,>.vux-indicator-right{
+        >a{
+            .vux-icon-dot.active{
+                background-color: #ff0000 !important;
+            }
+        }
+    }
+}
+
+// radio公共样式
+.radio-box{
+    display: inline-block;
+    width: px(30);
+    height: px(30);
+    border-radius: 50%;
+    border:px(2) solid #ff5500;
+    &.act{
+        background-color: #ff5500;
+    }
+}
+
+// 提交按钮样式
+.submit-btn{
+    display: block;
+    width: 94%;
+    line-height: px(78);
+    color: #fff;
+    font-size: px(28);
+    margin:px(34) 3%;
+    background-color: #ff5001;
+    border-radius: px(10);
+}
+
+

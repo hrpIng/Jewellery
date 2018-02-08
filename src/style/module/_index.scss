@@ -1,0 +1,34 @@
+.index-wrapper{
+    .advert-box{
+        line-height: px(54);
+        font-size: px(22);
+        color: #fff;
+        background-color: #b4d3e8;
+        overflow: hidden;
+        white-space: nowrap;
+        @include transition;
+        .advert-text{
+            display: inline-block;
+            padding: 0 px(20);
+        }
+    }
+    .irregular-category{
+        .cate1{
+            float: left;
+            display: block;
+            width: px(350);
+            height: px(430);
+        }
+        .cate2{
+            float: left;
+            display: block;
+            width: px(400);
+            height: px(215);
+        }
+    }
+    .ad-banner{
+        img{
+            display: block;
+        }
+    }
+}

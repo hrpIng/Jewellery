@@ -1,0 +1,30 @@
+.category-wrapper{
+    height: 100%;
+    overflow: hidden;
+    background-color: #efeff4;
+    .cate-left{
+        width: px(190);
+        height: 100%;
+        float: left;
+        .txt{
+            font-size: px(24);
+            line-height: px(100);
+            text-align: center;
+            &.act{
+                color: #ff5500;
+                background-color: #fff;
+            }
+        }
+    }
+    .cate-right{
+        height: 100%;
+        margin-left: px(190);
+        .product-list{
+            padding: px(3);
+            .list{
+                margin-bottom: px(20);
+                border-top: none;
+            }
+        }
+    }
+}

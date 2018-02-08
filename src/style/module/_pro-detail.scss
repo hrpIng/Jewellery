@@ -1,0 +1,127 @@
+.pro-detail-wrapper{
+   .goods-detail{
+        padding: px(30) px(20) px(15);
+        .title{
+            font-size: px(30);
+            color: #000;
+            line-height: px(38);
+            max-height: px(76);
+            margin-bottom: px(10);
+            @include ovh-more-line;
+        }
+        .price-box{
+            color: #999;
+            font-size: px(24);
+            .price{
+                padding: 0 px(10);
+                font-size: px(30);
+            }
+            .num{
+                margin-left: px(10)
+            }
+        }
+    }
+    .detail-wrapper{
+        .title{
+            padding: px(20);
+            font-size: px(26);
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+}
+.footer-tools{
+    height: px(100);
+
+    .tools{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: px(100);
+        border-top: 1px solid #e4e4e4;
+        background-color: #f7f7f7;
+        @include flex;
+        @include w750;
+        .btn{
+            width: px(215);
+            color: #fff;
+            font-size: px(28);
+            background-color: #ff5500;
+            &.red{
+                background-color: #fe0000;
+            }
+        }
+        a{
+            padding-top: px(58);
+            background-image: url('../static/images/meau.png');
+            background-repeat:no-repeat;
+            background-size: px(750) px(200);
+            text-align: center;
+            font-size: px(24);
+            color: #484848;
+            @include flex-one;
+            &.home-icon{
+                background-position: px(-39) 0;
+            }
+            &.category-icon{
+                background-position: px(-225) 0;
+            }
+            &.cart-icon{
+                background-position: px(-415) 0;
+            }
+        }
+    }
+}
+
+.select-spec{
+    background-color: #fff;
+    .title{
+        padding: px(20) 0;
+        font-size: px(28);
+        color: #1182ff;
+        text-align: center;
+        border-bottom: 1px solid #d7d7d7;
+    }
+    .sepc-box{
+        position: relative;
+        padding:px(10) px(26);
+        .sub-title{
+            font-size: px(24);
+            margin-bottom: px(10)
+        }
+        .item{
+            display: inline-block;
+            margin: 0 px(10) px(10) px(10);
+            padding: px(10) px(12);
+            color: #161616;
+            background-color: #eeeeee;
+            border-radius: px(5);
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            left: px(26);
+            bottom: 0;
+            right: 0;
+            height: px(1);
+            background-color: #d7d7d7;
+        }
+    }
+    .num-box{
+        padding: px(15) 0;
+        .text{
+            margin-right: px(15);
+        }
+    }
+    .btn{
+        line-height: px(74);
+        color: #fff;
+        font-size: px(26);
+        text-align: center;
+        background-color: #ff5500;
+    }
+}

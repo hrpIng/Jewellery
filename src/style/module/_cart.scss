@@ -1,0 +1,124 @@
+.cart-wrapper{
+    min-height: 100%;
+    background-color: #efeff4;
+    .footer-settlement{
+        height: px(84);
+        .settlement{
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: px(100);
+            background-color: #f7f7f7;
+            height: px(86);
+            @include w750;
+            @include flex;
+            @include flex-align;
+        }
+        .radio-box{
+            margin: 0 px(14);
+        }
+        .txt{
+            display: block;
+            font-size: px(26);
+            color: #ff5500;
+        }
+        .radio-box{
+            margin-top: px(4);
+            vertical-align: top;
+        }
+        .other{
+            font-size: px(24);
+            color: #999;
+            text-align: right;
+            @include flex-one;
+            .freight{
+                font-size: px(18);
+            }
+        }
+        
+        .settlement-btn{
+            width: px(214);
+            line-height: px(86);
+            font-size: px(30);
+            margin-left: px(20);
+            color: #fff;
+            text-align: center;
+            background-color: #ff0000;
+        }
+    }
+    .cart-list{
+        background-color: #fff;
+        .cart-goods{
+            position: relative;
+            padding: px(20);
+            @include flex;
+            @include flex-align;
+            .img{
+                display: block;
+                width: px(172);
+                height: px(172);
+                margin: 0 px(25) 0 px(18);
+                position: relative;
+                img{
+                    @include img-middle;
+                }
+            }
+            .txt{
+                color: #999;
+                font-size: px(26);
+                line-height: px(40);
+                @include flex-one;
+            }
+            .txt-title{
+                color: #333;
+                font-size: px(28);
+                @include ovh-more-line;
+            }
+            .package{
+                @include ovh-more-line;
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                left: px(50);
+                right: 0;
+                bottom: 0;
+                height: px(1);
+                background-color: #e0e0e2;
+            }
+        }
+        .other-tools{
+            line-height: px(64);
+            @include flex;
+            .del-icon{
+                width: px(72);
+                height: px(64);
+                @include icon-image;
+                background-position: px(21) px(-283);
+            }
+            .text{
+                margin-right: px(15);
+            }
+            .num-box{
+                @include flex-one;
+            }
+        }
+    }
+    .cart-box{
+        position: relative;
+        &:after{
+            content: "";
+            position: absolute;
+            left: px(20);
+            right: 0;
+            bottom: 0;
+            height: px(1);
+            background-color: #e0e0e2;
+        }
+        &:last-child{
+            &:after{
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@import "base/_global.scss"; // 全局样式
+@import "base/_common.scss"; // 公共样式
+
+@import "module/_index.scss"; // 首页样式
+@import "module/_category.scss"; // 分类样式
+@import "module/_cart.scss"; // 购物车样式
+
+@import "module/_list.scss"; // 商品列表样式
+@import "module/_pro-detail.scss"; // 商品详情样式
+
+@import "module/_account.scss"; // 会员中心的公共样式
